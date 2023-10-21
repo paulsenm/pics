@@ -1,21 +1,21 @@
 import axios from 'axios';
-require('dotenv').config({path: '../.env'});
 
-const apiKey = process.env.AXIOS_KEY;
+import axiosKey from './apiKeys';
 
 
-const searchImages = async () => {
+
+const searchImages = async (searchTerm) => {
     const response = await axios.get('https://api.unsplash.com/search/photos',
         {
             headers:{
-                Authorization: `Client-ID ${apiKey}`
+                Authorization: `Client-ID ${axiosKey}`
             },
             params:{
-                query: 'cars'
+                query: searchTerm
             }
         }
     );
-    return response;
+    return response.data.results;
 } 
 
 export default searchImages;
