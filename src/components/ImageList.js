@@ -2,8 +2,8 @@ import ImageShow from "./ImageShow";
 
 function ImageList({images}) {
     console.log("The images are: ", images);
-    const renderedImages = images.map((image) => {
-        return <ImageShow image={image} />
+    const renderedImages = images.map((image, index) => {
+        return <ImageShow image={image} key={image.id} />
     })
     return (
         <div>
