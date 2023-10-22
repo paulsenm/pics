@@ -18,6 +18,7 @@ const searchImages = async (searchTerm) => {
             }
         }
     );
+    console.log(response.data.results);
     return response.data.results;
 } 
 

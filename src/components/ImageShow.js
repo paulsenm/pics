@@ -1,8 +1,8 @@
 
-function ImageShow() {
+function ImageShow({ image }) {
     return (
         <div>
-            Image Show
+            <img src={image.urls.thumb}/>
         </div>
     )
 }
